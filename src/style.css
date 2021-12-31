@@ -10,6 +10,8 @@ body {
 h1 {
     font-size: 110px;
     margin: 30px;
+    color: #a32323;
+    text-shadow: 1px 1px 2px green;
 }
 
 h3 {
@@ -76,13 +78,13 @@ header {
 
 .btn:hover {
     color: #3e8e41;
-    transform: scale(1.1);
+    transform: scale(1.2);
     transition: 0.3s;
 }
 
 .active {
-    color: #3e8e41;
-    transform: scale(1.1);
+    color: #a32323;
+    transform: scale(1.2);
 }
 
 #menu {
@@ -99,6 +101,8 @@ header {
 }
 
 .menuItems {
+    font-family: sans-serif;
+    color: rgb(200, 255, 200);
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -109,7 +113,16 @@ header {
 }
 
 .menuImg {
+    border-radius: 20px;
     width: 300px;
     height: 250px;
     padding: 10px;
+}
+
+.itemDescription {
+    width: 300px;
+    color: rgb(170, 170, 170);
+    text-align: left;
+    font-size: 16px;
+    font-style: italic;
 }

@@ -5,7 +5,7 @@ const createContact = () => {
 
     const contactDiv = document.createElement('div')
     contactDiv.id = 'contactDiv'
-    contactDiv.innerHTML = 'Address: Zion <br/><br/> Phone: 555-5555 <br/><br/> Email: scriptaurante@matrix.com'
+    contactDiv.innerHTML = 'Address: Zion <br/><br/> Phone: 555-5555 <br/><br/> Email: scriptaurant@matrix.com'
 
     content.replaceChild(contactDiv, content.children[1])
 }

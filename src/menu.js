@@ -5,6 +5,42 @@ import steak from './steak.jpg'
 import mush from './mush.jpg'
 import wine from './wine.jpg'
 
+class MenuItem {
+    constructor(name, img, description) {
+        this.name = name
+        this.img = img
+        this.description = description
+    }
+
+    makeElem() {
+        const item = document.createElement('div')
+        item.classList.add('menuItems')
+        item.textContent = this.name
+        const itemImg = new Image()
+        itemImg.src = this.img
+        itemImg.classList.add('menuImg')
+        item.appendChild(itemImg)
+        const desc = document.createElement('div')
+        desc.classList.add('itemDescription')
+        desc.textContent = this.description
+        item.appendChild(desc)
+        return item
+    }
+}
+
+const itemA = new MenuItem('Oracle\'s Cookies', oracleCookies,
+                            '"Delicious chocolate cookie made with love by the Oracle."')
+const itemB = new MenuItem('Merovingian\'s Cake', cake,
+                            '"Not just a regular cake. It has a powerful code hidden in it."')
+const itemC = new MenuItem('Neo\'s Favorite Pasta', pasta,
+                            '"I used to eat there. Really good noodles - Neo"')
+const itemD = new MenuItem('The Matrix Steak', steak,
+                            '"The Matrix is telling my brain that it is juicy, and delicious. - Cypher"')
+const itemE = new MenuItem('Zion\'s Mush', mush,
+                            '"Traditional from Zion. Rich in proteins, vitamins and minerals."')
+const itemF = new MenuItem('Wine', wine,
+                            '"The best wine of Matrix."')
+
 const createMenu = () => {
     menuBtn.classList.add('active')
     homeBtn.classList.remove('active')
@@ -13,80 +49,15 @@ const createMenu = () => {
     const menuDiv = document.createElement('Div')
     menuDiv.id = 'menu'
 
-    menuDiv.appendChild(itemA())
-    menuDiv.appendChild(itemB())
-    menuDiv.appendChild(itemC())
-    menuDiv.appendChild(itemD())
-    menuDiv.appendChild(itemE())
-    menuDiv.appendChild(itemF())
+    menuDiv.appendChild(itemA.makeElem())
+    menuDiv.appendChild(itemB.makeElem())
+    menuDiv.appendChild(itemC.makeElem())
+    menuDiv.appendChild(itemD.makeElem())
+    menuDiv.appendChild(itemE.makeElem())
+    menuDiv.appendChild(itemF.makeElem())
 
     content.replaceChild(menuDiv, content.children[1])
 }
 
-const itemA = () => {
-    const itemA = document.createElement('div')
-    itemA.classList.add('menuItems')
-    itemA.textContent = 'Oracle\'s Cookies'
-    const cookiesImg = new Image()
-    cookiesImg.src = oracleCookies
-    cookiesImg.classList.add('menuImg')
-    itemA.appendChild(cookiesImg)
-    return itemA
-}
-
-const itemB = () => {
-    const itemB = document.createElement('div')
-    itemB.classList.add('menuItems')
-    itemB.textContent = 'Merovingian\'s Cake'
-    const cakeImg = new Image()
-    cakeImg.src = cake
-    cakeImg.classList.add('menuImg')
-    itemB.appendChild(cakeImg)
-    return itemB
-}
-
-const itemC = () => {
-    const itemC = document.createElement('div')
-    itemC.classList.add('menuItems')
-    itemC.textContent = 'Neo\'s Favorite Pasta'
-    const pastaImg = new Image()
-    pastaImg.src = pasta
-    pastaImg.classList.add('menuImg')
-    itemC.appendChild(pastaImg)
-    return itemC
-}
-
-const itemD = () => {
-    const itemD = document.createElement('div')
-    itemD.classList.add('menuItems')
-    itemD.textContent = 'The Matrix Steak'
-    const steakImg = new Image()
-    steakImg.src = steak
-    steakImg.classList.add('menuImg')
-    itemD.appendChild(steakImg)
-    return itemD
-}
-
-const itemE = () => {
-    const itemE = document.createElement('div')
-    itemE.classList.add('menuItems')
-    itemE.textContent = 'Zion\'s mush'
-    const mushImg = new Image()
-    mushImg.src = mush
-    mushImg.classList.add('menuImg')
-    itemE.appendChild(mushImg)
-    return itemE
-}
-
-const itemF = () => {
-    const itemF = document.createElement('div')
-    itemF.classList.add('menuItems')
-    itemF.textContent = 'Wine'
-    const wineImg = new Image()
-    wineImg.src = wine
-    wineImg.classList.add('menuImg')
-    itemF.appendChild(wineImg)
-    return itemF
-}
-
 export default createMenu
+
